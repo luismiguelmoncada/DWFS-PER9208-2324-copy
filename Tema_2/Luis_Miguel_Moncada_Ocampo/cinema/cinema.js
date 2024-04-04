@@ -28,13 +28,14 @@ function suggest(butacas, numeroAsientos) {
     }
 
     let libresFila = [];
-    for (let x = N - 1; x >= 0; x--) {
+    let bucleActivo = true;
+    for (let x = N - 1; x >= 0 && bucleActivo; x--) {
         libresFila = [];
-        for (let y = N - 1; y >= 0; y--) {
+        for (let y = N - 1; y >= 0 && bucleActivo; y--) {
             if (butacas[x][y].estado === false) {
                 libresFila.push(butacas[x][y]);
                 if (libresFila.length === numeroAsientos) {
-                    return libresFila;
+                    bucleActivo = false;
                 }
             } else {
                 libresFila = [];
