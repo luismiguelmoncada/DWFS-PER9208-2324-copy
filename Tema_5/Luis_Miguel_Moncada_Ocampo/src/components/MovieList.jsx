@@ -6,7 +6,7 @@ export const MovieList = () => {
     const [movies, setMovies] = useState([]);
     const getMovieRequest = async () => {
         setSpinner(true);
-        const url = `http://www.omdbapi.com/?s=star wars&apikey=263d22d8`;
+        const url = `https://www.omdbapi.com/?s=star wars&apikey=263d22d8`;
         const response = await fetch(url);
         const responseJson = await response.json();
         console.log('movies', responseJson);
@@ -16,6 +16,7 @@ export const MovieList = () => {
         }
     };
 
+    
     useEffect(() => {
         getMovieRequest();
     }, []);//se ejecuta solo una vez.

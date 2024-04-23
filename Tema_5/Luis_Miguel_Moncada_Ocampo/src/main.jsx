@@ -5,8 +5,6 @@ import './index.css'
 import Movies from './views/movies'
 
 
-
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   /*  <React.StrictMode>
      <App /> 
